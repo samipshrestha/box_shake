@@ -18,7 +18,7 @@
 		else if ($.browser.msie) {
 
 		   if($.browser.version > 9){
-	   		css3Animation();
+	   			css3Animation();
 		   }
 
 		   else{
@@ -28,6 +28,8 @@
 		}
 
 		function shakeAnimation(){
+			var animationType = typeof options !== 'undefined' ? options.animation : 'shake';
+			var animationPeriod = typeof options.animationPeriod !== 'undefined' ? options.animationPeriod : '500';
 			var shakeAnimation = setInterval(function(){
 		   		if( count%2 === 0 ){
 					$( _this ).animate({
@@ -43,7 +45,7 @@
 			   		}, 70);
 				   	count++;
 				}
-		   	},70);
+		   	},90);
 
 		   	setTimeout(function(){
 		   		clearInterval(shakeAnimation);
@@ -51,7 +53,7 @@
 		   			'margin-left' : '0',
 		   		},70);
 
-		   	}, 1000);
+		   	}, animationPeriod);
 		}
 
 		function css3Animation(){

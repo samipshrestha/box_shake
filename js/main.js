@@ -3,7 +3,8 @@
 	'use strict';
 
 	var options = {
-		animation: 'shake'
+		animation: 'shake',
+		animationPeriod: 500
 	} 
 
 	$(document).ready(function(){
